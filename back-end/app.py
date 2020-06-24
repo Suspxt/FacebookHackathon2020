@@ -3,11 +3,10 @@ curious_george.patch_all(thread=False, select=False)
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit
 from conversation_handler import conversation
-import time
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ASDJOAIHJFLKAGNALKGBNAJKLBG'
-socketio = SocketIO(app, engineio_logger=True, logger=True, cors_allowed_origins="*")
+socketio = SocketIO(app, cors_allowed_origins="*")
 user_ids = {}
 
 
